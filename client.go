@@ -232,7 +232,7 @@ func Dial(network, address string, opts ...*Option) (client *Client, err error) 
 	if err != nil {
 		return nil, err
 	}
-	conn, err := net.Dial(network, address)
+	conn, err := net.Dial(network, address) //指定网络连接类型，连接的目标网络地址，返回net.Conn接口对象
 	if err != nil {
 		return nil, err
 	}
