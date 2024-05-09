@@ -36,7 +36,7 @@ func main() {
 			defer wg.Done()
 			args := fmt.Sprintf("geerpc req %d", i)
 			var reply string
-			if err := client.Call("Foo.Sum", args, &reply); err != nil { //call再。。。。。
+			if err := client.Call("Foo.Sum", args, &reply); err != nil { //call，先send，再Write，再
 				log.Fatal("call Foo.Sum error:", err)
 			}
 			log.Println("reply:", reply)
